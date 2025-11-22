@@ -1,0 +1,72 @@
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  background-color: rgba(31, 31, 31, 0.205);
+  padding: 20px 0;
+}
+
+.carousel-track{
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+
+.card{
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'poppins';
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.logo-white {
+  filter: invert(1) brightness(50);
+}
+
+/* Optional: smooth infinite scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+/* .carousel-container{
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(32, 31, 31, 0.282);
+    padding:20px 0;
+}
+
+.card{
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'poppins';
+    font-weight: bold;
+    font-size: x-large;
+}
+
+
+.carousel-track{
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+ */

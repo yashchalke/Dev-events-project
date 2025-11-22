@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@utility font-special-gothic {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+@utility poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+@utility poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@utility poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@utility poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  
+}
+
+@utility poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@utility poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@utility poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@utility poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+@utility poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@utility poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+@utility poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+@utility poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@utility poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@utility poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+@utility poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+@utility poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@utility poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+@utility poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+
+
+:root{
+    --color-border-dark: #151024;
+    --color-bg-main:#961eff;
+    --color-bg-secondary:#961eff4b;
+}
+
+@theme inline{
+    --color-border-dark: var(--color-border-dark);
+    --color-bg-main:var(--color-bg-main);
+    --color-bg-secondary:var(--color-bg-secondary);
+}
+
+/* Text Styling */
+@layer components{
+    .text-main{
+        @apply text-[#961eff];
+    }
+
+    .heading{
+        @apply font-special-gothic md:text-4xl text-2xl;
+    }
+
+    .subheading{
+        @apply font-special-gothic text-xl ;
+    }
+
+    .EventTitle{
+        @apply font-special-gothic text-xl;
+    }
+
+    
+}
+
+/* Tags Styling */
+@layer base{
+    h1{
+        @apply text-6xl;
+    }
+
+    nav{
+        @apply flex justify-between px-10 py-5 items-center;
+    }
+
+    header{
+        @apply glass w-full fixed top-0 z-50 ;
+    }
+    
+    body{
+        @apply bg-black text-white;
+    }
+
+    form{
+        @apply bg-[#2f2d2ddc] rounded-xl text-white poppins-regular;
+    }
+}
+
+@layer components{
+    .nav-logo{
+        @apply md:text-2xl text-xl font-special-gothic;
+    }
+
+    .nav-ul{
+        @apply md:flex gap-20 hidden poppins-regular;
+    }
+
+    .events {
+        @apply grid grid-cols-1 gap-10 lg:grid lg:grid-cols-3 md:flex md:flex-wrap md:justify-center;
+    }
+
+    #event-card{
+        @apply flex flex-col gap-3 md:w-[250px] md:h-[285px] lg:w-full lg:h-full;
+
+        .poster {
+            @apply h-[300px] w-full rounded-lg object-cover;
+        }
+
+        .title {
+            @apply text-[20px] font-semibold line-clamp-1;
+        }
+
+        p {
+            @apply poppins-regular text-[14px];
+        }
+
+        .datetime {
+            @apply flex flex-row flex-wrap items-center gap-4;
+
+            div {
+                @apply flex flex-row gap-2;
+            }
+        }
+    }
+
+    .button1{
+        @apply px-4 py-2 bg-bg-main rounded hover:cursor-pointer poppins-semibold;
+    }
+
+    .button-rounded{
+        @apply px-8 py-2 bg-bg-main rounded-full hover:cursor-pointer poppins-semibold;
+    }
+    
+}
+
+
+@utility glass{
+        @apply bg-[#12121280]/50 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl border-border-dark ;
+    }
