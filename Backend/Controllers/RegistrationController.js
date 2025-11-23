@@ -120,9 +120,46 @@ const GetTicketByIdController = async (req, res) => {
     }
 };
 
+const VerifyTicketController = async (req, res) => {
+    try {
+        const { ticketId } = req.body;
+
+        // 1. Find the registration
+        const registration = await Registration.findById(ticketId).populate('eventId');
+
+        if (!registration) {
+            return res.status(404).json({ message: "Invalid Ticket: Not Found" });
+        }
+
+        // 2. Check if already used
+        if (registration.status === 'attended') {
+            return res.status(400).json({ 
+                message: "Warning: Ticket already scanned/used!", 
+                Data: registration 
+            });
+        }
+
+        // 3. Mark as Attended
+        registration.status = 'attended';
+        await registration.save();
+
+        res.status(200).json({
+            status: "True",
+            message: "Entry Approved! ✅",
+            Data: registration
+        });
+
+    } catch (err) {
+        console.error("Verification Error:", err);
+        res.status(500).json({ message: "Server Error" });
+    }
+};
+
+
 module.exports = { 
     RegisterForEventController, 
     CheckRegistrationStatusController,
     GetUserRegistrationsController,
-    GetTicketByIdController
+    GetTicketByIdController,
+    VerifyTicketController
 };

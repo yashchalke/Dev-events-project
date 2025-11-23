@@ -7,6 +7,7 @@ import CreateEvent from "./Pages/CreateEvent";
 import MyEvents from "./Pages/MyEvents";
 import { Toaster } from 'react-hot-toast';
 import TicketPage from "./Pages/TicketPage";
+import ScanTicket from "./Pages/ScanTicket";
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/myevents" element={<MyEvents />}></Route>
         <Route path="/create-new-event" element={<CreateEvent/>}></Route>
         <Route path="/ticket/:id" element={<TicketPage />}></Route>
+        <Route path="/scan-ticket" element={<ScanTicket />}></Route>
       </Routes>
     </>
   );

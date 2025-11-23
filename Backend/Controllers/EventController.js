@@ -16,6 +16,12 @@ const CreateEventController = async(req, res) => {
             agenda        // New
         } = req.body;
 
+        const { userId } = req.auth;
+
+        if (!userId) {
+            return res.status(401).json({ message: "Unauthorized" });
+        }
+
         // 2. Validate required fields
         // Note: 'agenda' is excluded here if you want it to be optional, 
         // but ensure the others are present.
@@ -34,7 +40,8 @@ const CreateEventController = async(req, res) => {
             address,
             organizer,
             description,
-            agenda // Can be empty string if not provided
+            agenda, // Can be empty string if not provided
+            createdBy: userId
         });
 
         if (event) {

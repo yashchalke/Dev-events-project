@@ -22,7 +22,8 @@ const RegistrationSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["registered", "cancelled"],
+        // 👇 ADD "attended" TO THIS LIST
+        enum: ["registered", "cancelled", "attended"], 
         default: "registered"
     }
 }, { timestamps: true });
