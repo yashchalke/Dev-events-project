@@ -6,7 +6,8 @@ const {
     RegisterForEventController, 
     CheckRegistrationStatusController,
     GetUserRegistrationsController,
-    GetTicketByIdController
+    GetTicketByIdController,
+    VerifyTicketController
 } = require("../Controllers/RegistrationController");
 
 // Middleware to ensure user is logged in via Clerk
@@ -23,5 +24,7 @@ router.get("/status/:eventId", requireAuth, CheckRegistrationStatusController);
 router.get("/my-events", requireAuth, GetUserRegistrationsController);
 
 router.get("/ticket/:id", requireAuth, GetTicketByIdController);
+
+router.post("/verify", requireAuth, VerifyTicketController);
 
 module.exports = router;

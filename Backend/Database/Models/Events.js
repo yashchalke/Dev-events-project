@@ -44,6 +44,11 @@ const EventSchema = new mongoose.Schema({
     agenda: { 
         type: String, 
         default: "" // Optional, as some events might not have a detailed agenda yet
+    },
+
+    createdBy: { 
+        type: String, 
+        required: true 
     }
 }, { timestamps: true });
 
