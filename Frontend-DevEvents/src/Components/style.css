@@ -5,22 +5,21 @@
   padding: 20px 0;
 }
 
-.carousel-track{
-    display: flex;
-    width: max-content;
-    animation: scroll 30s linear infinite;
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
 }
 
-
-.card{
-    flex: 0 0 auto;
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'poppins';
-    font-weight: bold;
-    font-size: x-large;
+.card {
+  flex: 0 0 auto;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "poppins";
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .logo-white {
@@ -36,9 +35,6 @@
     transform: translateX(-50%);
   }
 }
-
-
-
 
 /* .carousel-container{
     width: 100%;
